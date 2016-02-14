@@ -16,25 +16,16 @@ public class AddDigits {
     @Solution
     public int addDigits(int num) {
         while (num >= 10) {
-            num = splitAndSum(num);
+            num = sumNumber(num);
         }
         return num;
     }
 
-    private int[] splitNumber(int num) {
-        int[] ints = new int[String.valueOf(num).length()];
-        for (int i = 0; i < ints.length; i++) {
-            ints[i] = num % 10;
-            num /= 10;
-        }
-        return ints;
-    }
-
-    private int splitAndSum(int num) {
-        int[] ints = splitNumber(num);
+    private int sumNumber(int num) {
         int sum = 0;
-        for (int anInt : ints) {
-            sum += anInt;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
         }
         return sum;
     }

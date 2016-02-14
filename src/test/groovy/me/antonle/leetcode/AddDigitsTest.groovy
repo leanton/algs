@@ -8,7 +8,7 @@ class AddDigitsTest extends Specification {
 
     def "Add digits data driven test"() {
         expect:
-        result == addDigits.addDigits(input)
+        addDigits.addDigits(input) == result
 
         where:
         input      || result
