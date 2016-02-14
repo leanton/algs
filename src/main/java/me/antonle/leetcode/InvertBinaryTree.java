@@ -28,8 +28,16 @@ public class InvertBinaryTree {
 
     @Solution
     public TreeNode invertTree(TreeNode root) {
-        // TODO
+        invert(root);
         return root;
+    }
+
+    private void invert(TreeNode node) {
+        if (node != null) {
+            flipChildren(node);
+            invert(node.left);
+            invert(node.right);
+        }
     }
 
     void flipChildren(TreeNode node) {
