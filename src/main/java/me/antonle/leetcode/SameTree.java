@@ -1,6 +1,7 @@
 package me.antonle.leetcode;
 
 
+import me.antonle.leetcode.util.Solution;
 import me.antonle.leetcode.util.TreeNode;
 
 /**
@@ -10,6 +11,7 @@ import me.antonle.leetcode.util.TreeNode;
  */
 public class SameTree {
 
+    @Solution
     public boolean isSameTree(TreeNode p, TreeNode q) {
         return (p == null) && (q == null) || !(p == null || q == null) && p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
