@@ -6,6 +6,7 @@ class MoveZerosTest extends Specification {
 
     def moveZeros = new MoveZeros()
 
+    @SuppressWarnings('all')
     def "Move zeros data driven test"() {
         given:
         def actualOutput = moveZeros.moveZeroes(input as int[])
