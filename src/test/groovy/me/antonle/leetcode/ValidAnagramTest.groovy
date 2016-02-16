@@ -21,6 +21,5 @@ class ValidAnagramTest extends Specification {
         "anagram" | "nagaram" || true
         "rat"     | "car"     || false
 
-
     }
 }

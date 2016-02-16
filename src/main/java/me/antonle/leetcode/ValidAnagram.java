@@ -2,9 +2,6 @@ package me.antonle.leetcode;
 
 import me.antonle.leetcode.util.Solution;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 /**
  * Given two strings s and t, write a function to determine if t is an anagram of s.
  * <p>
@@ -19,13 +16,31 @@ public class ValidAnagram {
         if (s.length() != t.length()) {
             return false;
         }
-        char[] sChars = s.toCharArray();
-        List<Character> tList = t.chars().mapToObj(e->(char)e).collect(Collectors.toList());
-        for (char sChar : sChars) {
-            if (!tList.remove(Character.valueOf(sChar))) {
-                return false;
-            }
+        char[] fChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+        long fSum = sum(fChars);
+        long tSum = sum(tChars);
+        if (fSum != tSum) {
+            return false;
         }
-        return true;
+        long fMult = mult(fChars);
+        long tMult = mult(tChars);
+        return fMult == tMult;
+    }
+
+    private long sum(char[] fChars) {
+        long sum = 0;
+        for (char c : fChars) {
+            sum += c;
+        }
+        return sum;
+    }
+
+    private long mult(char[] chars) {
+        long mult = 1;
+        for (char c : chars) {
+            mult *= c;
+        }
+        return mult;
     }
 }
