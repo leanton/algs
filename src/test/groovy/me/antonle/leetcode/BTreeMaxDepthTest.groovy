@@ -25,12 +25,12 @@ class BTreeMaxDepthTest extends Specification {
     }
 
     def "B-tree tricky max depth"() {
-        given:
+        when:
         root.right.right.right = new TreeNode(10)
         root.right.right.right.right = new TreeNode(11)
         root.right.right.right.right.right = new TreeNode(12)
 
-        expect:
+        then:
         maxDepth.maxDepth(root) == 6
 
     }
