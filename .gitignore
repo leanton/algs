@@ -7,6 +7,7 @@
 
 # Java class files
 *.class
+*.jar
 
 # generated files
 bin/
@@ -32,3 +33,4 @@ proguard/
 .gradletasknamecache
 .gradle/
 build/
+gradle
