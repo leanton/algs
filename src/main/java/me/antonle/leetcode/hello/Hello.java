@@ -1,4 +1,4 @@
-package me.antonle.leetcode;
+package me.antonle.leetcode.hello;
 
 public class Hello {
 
