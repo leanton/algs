@@ -33,4 +33,4 @@ proguard/
 .gradle/
 build/
 
-!gradle/**
+!/gradle/**
