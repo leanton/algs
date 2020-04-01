@@ -28,15 +28,4 @@ class Day_01_SingleNumberTest extends Specification {
         where:
         arg << [null, [] as int[]]
     }
-
-    def "should throw if array violates the invariant"() {
-        when:
-        challenge.singleNumber(arg)
-
-        then:
-        thrown(AssertionError)
-
-        where:
-        arg << [[1, 1] as int[]]
-    }
 }

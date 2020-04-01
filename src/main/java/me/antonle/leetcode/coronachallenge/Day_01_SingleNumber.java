@@ -11,7 +11,24 @@ public class Day_01_SingleNumber {
             throw new IllegalArgumentException();
         }
 
-        return new Deduplicator(nums).getSingleElement();
+        return new XorDeduplicator(nums).getAnswer();
+    }
+
+    private static class XorDeduplicator {
+
+        private final int answer;
+
+        private XorDeduplicator(int[] nums) {
+            int initial = 0;
+            for (final int num : nums) {
+                initial = initial ^ num;
+            }
+            this.answer = initial;
+        }
+
+        public int getAnswer() {
+            return answer;
+        }
     }
 
     private static class Deduplicator {
@@ -30,7 +47,7 @@ public class Day_01_SingleNumber {
             }
         }
 
-        public int getSingleElement() {
+        public int getAnswer() {
             assert set.size() == 1;
             return set.iterator().next();
         }
