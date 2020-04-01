@@ -1,7 +1,5 @@
 package me.antonle.leetcode.util;
 
-import com.sun.istack.internal.Nullable;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -10,19 +8,18 @@ import java.util.stream.Collectors;
 
 public class CharCounter {
 
-
-    public static Map<Character, Long> countCharacters(@Nullable String text) {
+    public static Map<Character, Long> countCharacters(String text) {
         if (text == null) {
             return Collections.emptyMap();
         }
         return text
-                .chars()
-                .mapToObj(i -> (char) i)
-                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+            .chars()
+            .mapToObj(i -> (char) i)
+            .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 
     }
 
-    public static Map<Character, Long> countCharacters(@Nullable  Iterator<Character> iterator) {
+    public static Map<Character, Long> countCharacters(Iterator<Character> iterator) {
         if (iterator == null) {
             return Collections.emptyMap();
         }
