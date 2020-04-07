@@ -3,9 +3,16 @@ package me.antonle.leetcode.coronachallenge;
 public class Day_04_MoveZeros {
 
     public void moveZeroes(int[] nums) {
-        final int[] answer = moveZeroesWithReturn(nums);
-        for (int i = 0; i < answer.length; i++) {
-            nums[i] = answer[i];
+        int firstZeroIndex = -1;
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            if (num != 0 && firstZeroIndex != -1) {
+                nums[firstZeroIndex] = num;
+                nums[i] = 0;
+                firstZeroIndex++;
+            } else if (num == 0 && firstZeroIndex == -1) {
+                firstZeroIndex = i;
+            }
         }
     }
 
