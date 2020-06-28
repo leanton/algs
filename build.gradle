@@ -1,19 +1,22 @@
-group 'me.antonle.leetcode'
+group 'me.antonle.algs'
 version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-apply plugin: 'groovy'
-
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
 
 repositories {
     jcenter()
 }
 
-dependencies {
-    testImplementation 'junit:junit:4.12'
-    // mandatory dependencies for using Spock
-    testImplementation "org.codehaus.groovy:groovy-all:2.4.16"
-    testImplementation "org.spockframework:spock-core:1.2-groovy-2.4"
+subprojects {
+    apply plugin: 'java'
+
+
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
+
+    repositories {
+        jcenter()
+    }
+
 }

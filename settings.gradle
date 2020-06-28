@@ -1,2 +1,5 @@
-rootProject.name = 'leetcode'
+rootProject.name = 'algs'
+
+include 'leetcode'
+include 'stanford'
 
