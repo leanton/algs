@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Scanner;
 
 public class CountInversionsTest {
@@ -16,7 +18,8 @@ public class CountInversionsTest {
 
         // when
         var inversions = CountInversionsBruteForce.countInversionsBF(input);
-        Assertions.assertEquals(4L, inversions);
+        final long countInversions = new CountInversionsViaMergeSort().countInversions(input);
+        Assertions.assertEquals(4L, countInversions);
     }
 
     @Test
@@ -28,6 +31,17 @@ public class CountInversionsTest {
             input[i++] = scanner.nextInt();
         }
 
-        System.out.println(CountInversionsBruteForce.countInversionsBF(input));
+        Instant start1 = Instant.now();
+        final long inversions = new CountInversionsViaMergeSort().countInversions(input);
+        Instant end1 = Instant.now();
+
+        Instant startBF = Instant.now();
+        final long inversionsBF = CountInversionsBruteForce.countInversionsBF(input);
+        Instant endBF = Instant.now();
+
+        System.out.println(Duration.between(start1, end1));
+        System.out.println(Duration.between(startBF, endBF));
+        System.out.println(inversions);
+        Assertions.assertEquals(inversionsBF, inversions);
     }
 }
