@@ -1,7 +1,8 @@
 package me.antonle.stanford.algs;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 
@@ -14,7 +15,7 @@ public class KaratsubaAlgorithmTest {
 
         var expected = String.valueOf(Long.parseLong(x) * Long.parseLong(y));
         var actual = KaratsubaAlgorithm.multiply(x, y);
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -25,7 +26,7 @@ public class KaratsubaAlgorithmTest {
         var expected = new BigInteger(x).multiply(new BigInteger(y)).toString();
 
         var actual = KaratsubaAlgorithm.multiply(x, y);
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
         System.out.println(actual);
     }
 }

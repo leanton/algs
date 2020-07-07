@@ -1,7 +1,7 @@
 package me.antonle.stanford.algs;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -16,7 +16,7 @@ public class CountInversionsTest {
 
         // when
         var inversions = CountInversionsBruteForce.countInversionsBF(input);
-        Assert.assertEquals(4L, inversions);
+        Assertions.assertEquals(4L, inversions);
     }
 
     @Test

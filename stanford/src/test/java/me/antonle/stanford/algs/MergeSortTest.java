@@ -1,7 +1,7 @@
 package me.antonle.stanford.algs;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class MergeSortTest {
 
@@ -12,6 +12,6 @@ public class MergeSortTest {
         int[] expected = new int[]{1, 2, 3, 4, 5, 6, 6, 7, 8, 8};
 
         final int[] actual = MergeSort.mergeSort(input);
-        Assert.assertArrayEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 }
