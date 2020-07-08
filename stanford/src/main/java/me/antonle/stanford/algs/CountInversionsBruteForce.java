@@ -17,23 +17,4 @@ public class CountInversionsBruteForce {
         return count;
     }
 
-    public static IO countInversionsDC(IO input) {
-        int n = input.sortedOut.length;
-        if (n == 1) {
-            return new IO(input.sortedOut, 0);
-        }
-        return null;
-    }
-
-    private static class IO {
-
-        public final int[] sortedOut;
-        public final int inversions;
-
-        public IO(int[] sortedOut, int inversions) {
-            this.sortedOut = sortedOut;
-            this.inversions = inversions;
-        }
-    }
-
 }
