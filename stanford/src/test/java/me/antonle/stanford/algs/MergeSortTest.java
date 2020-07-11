@@ -3,7 +3,7 @@ package me.antonle.stanford.algs;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class MergeSortTest {
+class MergeSortTest {
 
     @Test
     public void should_sort_the_array() {
