@@ -19,11 +19,11 @@ public class ThreeSum {
      * 1. Sort the array??
      */
     public List<List<Integer>> threeSum(int[] nums) {
-        return threeSumA(nums);
+        return threeSumTwoPointers(nums);
     }
 
     /**
-     * Time complexity -> O(N^3)
+     * Time complexity -> O(N^2 * log(N))
      * Sort: [-1, 0, 1, 2, -1, -4] -> [-4, -1, -1, 0, 1, 2]
      * nums[i] + nums[j] + nums[k] = 0
      */
@@ -52,4 +52,47 @@ public class ThreeSum {
         return res;
     }
 
+    /**
+     * Time complexity -> O(N^3)
+     * Sort: [-1, 0, 1, 2, -1, -4] -> [-4, -1, -1, 0, 1, 2]
+     * nums[i] + nums[j] + nums[k] = 0
+     */
+    public List<List<Integer>> threeSumTwoPointers(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> answers = new ArrayList<>();
+
+        // 2 pointers situation
+        for (int i = 0; i < nums.length; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int num = nums[i];
+            int lo = i + 1;
+            int hi = nums.length - 1;
+            while (lo < hi) {
+                if (lo > i + 1 && nums[lo] == nums[lo - 1]) {
+                    lo++;
+                    continue;
+                }
+
+                if (hi < nums.length - 1 && nums[hi] == nums[hi + 1]) {
+                    hi--;
+                    continue;
+                }
+
+
+                if (nums[lo] + nums[hi] + num == 0) {
+                    answers.add(List.of(num, nums[lo], nums[hi]));
+                }
+                // [-4, -1, -1, 0, 1, 2]
+                if (nums[lo] + nums[hi] + num > 0) {
+                    hi--;
+                } else {
+                    lo++;
+                }
+            }
+
+        }
+        return answers;
+    }
 }
