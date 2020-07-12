@@ -80,7 +80,6 @@ public class ThreeSum {
                     continue;
                 }
 
-
                 if (nums[lo] + nums[hi] + num == 0) {
                     answers.add(List.of(num, nums[lo], nums[hi]));
                 }
